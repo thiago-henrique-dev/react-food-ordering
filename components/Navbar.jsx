@@ -15,7 +15,7 @@ export default function Navbar() {
         </div>
         <div className={styles.texts}>
           <div className={styles.text}>ORDER NOW</div>
-          <div className={styles.text}>012 345 678</div>
+          <div className={styles.text}>013 99715 3672</div>
         </div>
       </div>
       <div className={styles.item}>
@@ -24,7 +24,7 @@ export default function Navbar() {
           <li className={styles.listItem}>Products</li>
           <li className={styles.listItem}>Menu</li>
        
-        <Image src="/img/thg.png" alt="" width="100px" height="69px" />   
+        <Image src="/img/logo1.png" alt="" width="100px" height="69px" />   
       
           <li className={styles.listItem}>Events</li>
           <li className={styles.listItem}>Blog</li>
