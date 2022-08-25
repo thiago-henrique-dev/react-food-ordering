@@ -20,28 +20,15 @@ export default function Cart(){
             <th>Price</th>
             <th>Total</th>
           </tr>
-          <tr>
-            <td>
-              <span className={styles.id}>212</span>
-            </td>
-            <td>
-              <span className={styles.name}>
-                Thiago Henrique
-              </span>
-            </td>
-            <td>
-              <span className={styles.address}>Elton st. 212-33 LA</span>
-            </td>
+          
+          {cart.products.map((product) => (
 
-            <td>
-              <span className={styles.total}>$79.80</span>
-            </td>
-          </tr>
-          <tr className={styles.tr}>
+         
+          <tr className={styles.tr} key={product._id}>
             <td>
               <div className={styles.imgContainer}>
                 <Image
-                  src="/img/pizza.png"
+                  src={product.img}
                   layout="fill"
                   objectFit="cover"
                   alt=""
@@ -49,23 +36,27 @@ export default function Cart(){
               </div>
             </td>
             <td>
-              <span className={styles.name}>CORALZO</span>
+              <span className={styles.name}>{product.title}</span>
             </td>
             <td>
               <span className={styles.extras}>
-                Double ingredient, spicy sauce
+                {product.extras.map((extras) => (
+                  <span key={extras._id}>{extras.text}, </span>
+            
+                ))}
               </span>
             </td>
             <td>
-              <span className={styles.price}>$19.90</span>
+              <span className={styles.price}>{product.price}</span>
             </td>
             <td>
-              <span className={styles.quantity}>2</span>
+              <span className={styles.quantity}>{product.quantity}</span>
             </td>
             <td>
-              <span className={styles.total}>$39.80</span>
+              <span className={styles.total}>{product.price * product.quantity}</span>
             </td>
           </tr>
+           ))}
         </table>
       </div>
       <div className={styles.right}>
@@ -78,7 +69,7 @@ export default function Cart(){
             <b className={styles.totalTextTitle}>Discount:</b>$0.00
           </div>
           <div className={styles.totalText}>
-            <b className={styles.totalTextTitle}>Total:</b>$79.60
+            <b className={styles.totalTextTitle}>Total:</b>${cart.total}
           </div>
           <button className={styles.button}>CHECKOUT NOW!</button>
         </div>
